@@ -8,55 +8,28 @@
 </head>
 <body>
 <h1 th:text="${title}">title</h1>
-<!-- <form method="post" action="#" th:action="@{/sales/confirm}" th:object="${salesForm}">
-	<label for="date">Date:</label>
-	<input id="date" name="date" type="date"><br>
-	<div th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
-	<label for="name">Name:</label>
-	<input id="name" name="name" type="text"><br>
-	<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
-	<label for="gender">性別:</label>
-	<input type="radio" name="gender" value="male" th:checked="*{gender == male}">男性
-	<input type="radio" name="gender" value="female" th:checked="*{gender == female}">女性
-	<input type="radio" name="gender" value="other" th:checked="*{gender == other}">その他
-	<label for="age">Age:</label>
-	<select name="age">
-		<option value="9" th:checked="*{age == 9}">10才未満
-  		<option value="10" th:checked="*{age == 10}">10代
-       	<option value="20" th:checked="*{age == 20}">20代
-   		<option value="30" th:checked="*{age == 30}">30代
-     	<option value="40" th:checked="*{age == 40}">40代
-    	<option value="50" th:checked="*{age == 50}">50代
-      	<option value="60" th:checked="*{age == 60}">60才以上
-   	</select>
-	<div th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
-	<label for="price">Price:</label>
-	<input id="price" name="price]" type="number"><br>
-	<div th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
-	<input type="submit" value="Confirm">
-</form>
- -->
+<h2 th:text="${complete}"></h2>
  <form method="post" action="#" th:action="@{/sales/confirm}" th:object="${salesForm}">
-	<!-- <label for="date">Date:</label>
-	<input id="date" name="date" type="date"><br> -->
+	<label for="date">Date:</label>
+	<input type="text" placeholder="yyyy/MM/dd" th:field="*{date}"><br>
 	<label for="name">Name:</label>
-	<input id="name" name="name" type="text"><br>
+	<input id="name" name="name" type="text" th:value="*{name}"><br>
 	<label for="gender">性別:</label>
-	<input type="radio" name="gender" value="male">男性
-	<input type="radio" name="gender" value="female">女性
-	<input type="radio" name="gender" value="other">その他<br>
+	<input name="gender" type="radio" value="男性">男性
+	<input name="gender" type="radio" value="女性">女性
+	<input name="gender" type="radio" value="その他">その他<br>
 	<label for="age">Age:</label>
 	<select name="age">
-		<option value="9">10才未満
-  		<option value="10">10代
-       	<option value="20">20代
-   		<option value="30">30代
-     	<option value="40">40代
-    	<option value="50">50代
-      	<option value="60">60才以上
+		<option value="10才未満">10才未満
+  		<option value="10代">10代
+       	<option value="20代">20代
+   		<option value="30代">30代
+     	<option value="40代">40代
+    	<option value="50代">50代
+      	<option value="60才以上">60才以上
    	</select><br>
 	<label for="price">Price:</label>
-	<input id="price" name="price" type="number"><br>
+	<input id="price" name="price" type="number" th:value="*{price}"><br>
 	<input type="submit" value="Confirm">
 </form>
 

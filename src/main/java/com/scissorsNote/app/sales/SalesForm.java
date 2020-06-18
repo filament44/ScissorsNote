@@ -1,22 +1,36 @@
 package com.scissorsNote.app.sales;
 
-import java.util.Date;
+import java.time.LocalDate;
+
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 public class SalesForm {
-//	private Date date;
+	
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	private LocalDate date;
+	
 	private String name;
+	
 	private String gender;
-	private int age;
+	
+	@NotNull
+	private String age;
+	
 	private int price;
 	
 	public SalesForm() {}
 	
-//	public Date getDate() {
-//		return date;
-//	}
-//	public void setDate(Date date) {
-//		this.date = date;
-//	}
+	
+	
+	public LocalDate getDate() {
+		return date;
+	}
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
 	public String getName() {
 		return name;
 	}
@@ -29,10 +43,10 @@ public class SalesForm {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 	public int getPrice() {
